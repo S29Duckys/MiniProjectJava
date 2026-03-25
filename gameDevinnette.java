@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class gameDevinnette {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)){
         int number = (int)(Math.random() * 100 + 1);
 
 
@@ -15,16 +15,16 @@ public class gameDevinnette {
 
             if(value == number){
                 System.out.println("Good, the number is : " + number);
-            }
-
-            if (value != number){
-                System.out.println("reessayer");
-                continue;
-
+                break;
+            }else if (value < number) {
+                System.out.println("Too small !");
+            }else if (value > number) {
+                System.out.println("Too big !");
             }
 
         }
         System.out.println("Game Over");
         System.out.println(number);
+        }
     }
 }
