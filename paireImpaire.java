@@ -14,8 +14,6 @@ public class paireImpaire {
             System.out.printf("%d est impaire", value);
         }
 
-
         scanner.close();
     }
 }
- 
