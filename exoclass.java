@@ -3,6 +3,20 @@ class Voiture{
     String marque;
     int nbPortes;
     int vitesse;
+
+    String getDescription(){
+        return "Voiture " + marque + " de couleur " + couleur + " et qui a " + nbPortes + " de portes.";
+    }
+
+    void accelerer(int number){
+        vitesse = vitesse + number; 
+        System.out.println("La voiture accelere a " + vitesse + "Kmh");
+    }
+
+    void frener(int number){
+        vitesse = vitesse - number;
+        System.out.println("La voiture frene a " + vitesse + "Kmh");
+    }
 }
 
 public class exoclass{
@@ -16,8 +30,12 @@ public class exoclass{
         fiatMulltiplat.nbPortes = 5;
         fiatMulltiplat.vitesse = 0;
 
-        // on affiche 
-        System.out.printf("ma %s est ce couleur %s, elle avance a %dKmh, et elle a %d de portes", fiatMulltiplat.marque, fiatMulltiplat.couleur, fiatMulltiplat.vitesse, fiatMulltiplat.nbPortes);
+        // afficher la dersciption
+        String description = fiatMulltiplat.getDescription();
+        System.out.println(description);
 
+        // faire bouger la voiture 
+        fiatMulltiplat.accelerer(10); // vitesse = 10 
+        fiatMulltiplat.frener(4); // vitesse = 6
     }
 }
